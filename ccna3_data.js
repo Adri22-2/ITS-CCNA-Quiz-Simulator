@@ -1533,5 +1533,3 @@ window.ccnaDatabase.ccna3 = [
         rationale: "Il comando 'show version' fornisce l'identikit completo dell'hardware e del software dell'apparato: versione dell'IOS, file di boot, modello del dispositivo, uptime e valore corrente del registro di configurazione."
     }
 ];
-
-
