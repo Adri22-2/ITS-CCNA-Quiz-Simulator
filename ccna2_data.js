@@ -1,6 +1,5 @@
-// Inizializza il database globale se non esiste ancora window.ccnaDatabase = window.ccnaDatabase || {};
+window.ccnaDatabase = window.ccnaDatabase || {};
 window.ccnaDatabase.ccna2 = [
-// --- CCNA 2: BLOCCO 1 DI 3 (DOMANDE 1-50) ---
         {
             question: "Quale comando permette di creare una VLAN identificata dal numero 10 su uno switch Cisco Catalyst?",
             options: [
