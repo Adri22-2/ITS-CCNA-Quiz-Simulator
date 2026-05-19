@@ -33,7 +33,7 @@ window.onload = function() {
     }
 
     // 4. Prendi le prime 20 domande mescolate
-    const targetCount = Math.min(20, poolSize);
+    const targetCount = Math.min(10, poolSize);
     currentQuestions = shuffled.slice(0, targetCount);
 
     // Avvia la prima domanda
