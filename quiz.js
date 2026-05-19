@@ -1,74 +1,61 @@
-// Dichiarazione variabili globali (una sola volta)
 let currentQuestions = [];
 let currentIndex = 0;
 let score = 0;
 let hasAnswered = false;
 
 window.onload = function() {
-    // Inizializza il database globale se non esiste
     window.ccnaDatabase = window.ccnaDatabase || {};
-    
-    // Recupera il modulo selezionato dalla home
     const selectedModule = localStorage.getItem("selectedModule");
     
-    console.log("Modulo selezionato:", selectedModule);
-    console.log("Database disponibile:", window.ccnaDatabase);
-
-    // Controllo di sicurezza
     if (!selectedModule || !window.ccnaDatabase[selectedModule]) {
-        alert("Errore: Modulo non trovato o database non caricato correttamente.");
+        alert("Errore: Modulo non trovato. Torna alla home.");
         return;
     }
 
-    // Carica le domande del modulo scelto
     currentQuestions = window.ccnaDatabase[selectedModule];
     document.getElementById("mod-title").innerText = selectedModule.toUpperCase();
-    
-    // Avvia il quiz
     loadQuestion();
 };
 
 function loadQuestion() {
-    if (currentIndex < currentQuestions.length) {
-        hasAnswered = false;
-        let q = currentQuestions[currentIndex];
-        
-        document.getElementById("question").innerText = q.question;
-        let optionsDiv = document.getElementById("options");
-        optionsDiv.innerHTML = "";
-        
-        q.options.forEach((opt, index) => {
-            let btn = document.createElement("button");
-            btn.innerText = opt;
-            btn.onclick = () => checkAnswer(index);
-            optionsDiv.appendChild(btn);
-        });
-        
-        document.getElementById("feedback").innerText = "";
-    } else {
-        document.getElementById("question").innerText = "Quiz terminato! Punteggio finale: " + score;
+    if (currentIndex >= currentQuestions.length) {
+        document.getElementById("question").innerText = "Quiz completato!";
         document.getElementById("options").innerHTML = "";
+        document.getElementById("feedback").innerText = "Punteggio finale: " + score + " su " + currentQuestions.length;
+        return;
     }
+    hasAnswered = false;
+    let q = currentQuestions[currentIndex];
+    document.getElementById("question").innerText = q.question;
+    let optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+    q.options.forEach((opt, index) => {
+        let btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.className = "option-btn";
+        btn.onclick = () => checkAnswer(index);
+        optionsDiv.appendChild(btn);
+    });
+    document.getElementById("feedback").innerText = "";
 }
 
 function checkAnswer(selectedIndex) {
     if (hasAnswered) return;
     hasAnswered = true;
-    
     let q = currentQuestions[currentIndex];
     let feedback = document.getElementById("feedback");
     
     if (selectedIndex === q.correct) {
         score++;
-        feedback.innerText = "Corretto! " + q.rationale;
-        feedback.style.color = "green";
+        feedback.innerHTML = "<span style='color:green'>Corretto!</span> " + q.rationale;
     } else {
-        feedback.innerText = "Sbagliato. La risposta era: " + q.options[q.correct] + ". " + q.rationale;
-        feedback.style.color = "red";
+        feedback.innerHTML = "<span style='color:red'>Sbagliato.</span> La risposta era: " + q.options[q.correct] + ". " + q.rationale;
     }
     
-    setTimeout(() => {
-        currentIndex++;
-        loadQuestion();
-    }, 3000);
+    let nextBtn = document.createElement("button");
+    nextBtn.innerText = "Prossima Domanda";
+    nextBtn.style.marginTop = "20px";
+    nextBtn.onclick = () => { currentIndex++; loadQuestion(); };
+    feedback.appendChild(document.createElement("br"));
+    feedback.appendChild(nextBtn);
 }
