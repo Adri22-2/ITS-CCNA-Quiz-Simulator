@@ -1,6 +1,7 @@
 window.ccnaDatabase = window.ccnaDatabase || {};
 window.ccnaDatabase.ccna2 = [
 ];
+       {
             question: "Quale comando permette di creare una VLAN identificata dal numero 10 su uno switch Cisco Catalyst?",
             options: [
                 "Switch# vlan 10",
