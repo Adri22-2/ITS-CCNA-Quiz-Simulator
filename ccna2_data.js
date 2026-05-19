@@ -1655,7 +1655,7 @@ window.ccnaDatabase.ccna2 = [
         },
 rationale: "L'FCS (Frame Check Sequence) contiene il valore risultante dal calcolo matematico eseguito sull'intero contenuto del frame; se il calcolo del destinatario non coincide, il frame viene scartato."
     }
-]; // <--- ASSICURATI DI CHIUDERE L'ARRAY COSÌ ALLA FINE DI TUTTO IL FILE
+];
 
 
 
