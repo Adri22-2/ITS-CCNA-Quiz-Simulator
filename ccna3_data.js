@@ -1,6 +1,6 @@
-// Inizializza il database globale se non esiste ancora window.ccnaDatabase = window.ccnaDatabase || {};
+window.ccnaDatabase = window.ccnaDatabase || {};
 window.ccnaDatabase.ccna3 = [
-    // --- CCNA 3: BLOCCO 1 DI 3 (DOMANDE 1-50) ---
+];
     {
         question: "All'interno di un gruppo FHRP (First Hop Redundancy Protocol), quale ruolo assume il router che ha il compito attivo di inoltrare i pacchetti inviati all'indirizzo IP del gateway virtuale?",
         options: [
