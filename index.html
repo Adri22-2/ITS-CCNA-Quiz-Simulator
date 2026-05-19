@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITS CCNA Quiz Simulator</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --primary: #38bdf8;
+            --primary-hover: #0ea5e9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        p.subtitle {
+            color: #94a3b8;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 2px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .btn {
+            background-color: var(--primary);
+            color: #0f172a;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
 
+    <h1>🚀 ITS CCNA Quiz Simulator</h1>
+    <p class="subtitle">Seleziona un modulo Cisco per avviare una simulazione d'esame da 20 domande casuali.</p>
+
+    <div class="container">
+        <div class="card" onclick="startQuiz('ccna1')">
+            <div>
+                <h2>CCNA 1</h2>
+                <p>Introduction to Networks (ITN)<br>Basi del networking, IP, Subnetting, OSI/TCP-IP e cavi fisici.</p>
+            </div>
+            <button class="btn">Inizia Test</button>
+        </div>
+
+        <div class="card" onclick="startQuiz('ccna2')">
+            <div>
+                <h2>CCNA 2</h2>
+                <p>Switching, Routing, and Wireless Essentials (SRWE)<br>VLAN, EtherChannel, DHCP Relay, Routing Statico e OSPFv2.</p>
+            </div>
+            <button class="btn">Inizia Test</button>
+        </div>
+
+        <div class="card" onclick="startQuiz('ccna3')">
+            <div>
+                <h2>CCNA 3</h2>
+                <p>Enterprise Networking, Security, and Automation (ENSA)<br>Sicurezza, WAN, VPN, OSPF avanzato e automazione.</p>
+            </div>
+            <button class="btn">Inizia Test</button>
+        </div>
+    </div>
+
+    <script>
+        function startQuiz(moduleCode) {
+            // Salva il modulo scelto nella memoria del browser
+            localStorage.setItem("selectedModule", moduleCode);
+            // Reindirizza alla pagina del quiz
+            window.location.href = "quiz.html";
+        }
+    </script>
+</body>
+</html>
