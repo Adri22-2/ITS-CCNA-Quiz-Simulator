@@ -1152,4 +1152,5 @@ window.ccnaDatabase.ccna1 = [
             options: ["L'indirizzo IP del Gateway", "Il valore di controllo dell'integrità dei dati (FCS)", "Il numero di porta sorgente", "Il flag di controllo del flusso"],
             correct: 1,
             rationale: "L'FCS (Frame Check Sequence) viene inserito alla fine del frame (trailer) e contiene il codice di controllo d'errore calcolato sull'intera PDU."
+        }          
         ];
