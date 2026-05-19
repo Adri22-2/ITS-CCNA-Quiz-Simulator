@@ -1,6 +1,5 @@
-// Inizializza il database globale se non esiste ancora window.ccnaDatabase = window.ccnaDatabase || {};
+window.ccnaDatabase = window.ccnaDatabase || {};
 window.ccnaDatabase.ccna1 = [
-// --- CCNA 1: BLOCCO 1 DI 3 (DOMANDE 1-50) ---
         {
             question: "Un utente lancia il comando 'ping 192.168.1.1' e riceve una risposta. Quale livello del modello OSI ha verificato la corretta connettività end-to-end?",
             options: ["Livello Fisico", "Livello di Rete (Layer 3)", "Livello di Sessione", "Livello di Applicazione"],
@@ -1152,6 +1151,4 @@ window.ccnaDatabase.ccna1 = [
             options: ["L'indirizzo IP del Gateway", "Il valore di controllo dell'integrità dei dati (FCS)", "Il numero di porta sorgente", "Il flag di controllo del flusso"],
             correct: 1,
             rationale: "L'FCS (Frame Check Sequence) viene inserito alla fine del frame (trailer) e contiene il codice di controllo d'errore calcolato sull'intera PDU."
-        ]
-
-
+        ];
