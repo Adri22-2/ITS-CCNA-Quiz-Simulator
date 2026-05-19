@@ -5,11 +5,6 @@ let currentIndex = 0;
 let score = 0;
 let hasAnswered = false;
 
-let currentQuestions = [];
-let currentIndex = 0;
-let score = 0;
-let hasAnswered = false;
-
 window.onload = function() {
     // Assicuriamoci che l'oggetto esista, altrimenti crealo vuoto
     window.ccnaDatabase = window.ccnaDatabase || {};
