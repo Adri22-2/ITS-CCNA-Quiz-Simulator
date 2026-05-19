@@ -1,6 +1,5 @@
-console.log("Il quiz.js è stato caricato correttamente!");
-alert("Quiz caricato!"); // Questo farà apparire un popup quando apri la pagina
-
+alert("Il file quiz.js è stato caricato!");
+console.log("Database caricato:", window.ccnaDatabase);
 let currentQuestions = [];
 let currentIndex = 0;
 let score = 0;
