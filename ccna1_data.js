@@ -1,6 +1,6 @@
 window.ccnaDatabase = window.ccnaDatabase || {};
 window.ccnaDatabase.ccna1 = [
-];
+
         {
             question: "Un utente lancia il comando 'ping 192.168.1.1' e riceve una risposta. Quale livello del modello OSI ha verificato la corretta connettività end-to-end?",
             options: ["Livello Fisico", "Livello di Rete (Layer 3)", "Livello di Sessione", "Livello di Applicazione"],
