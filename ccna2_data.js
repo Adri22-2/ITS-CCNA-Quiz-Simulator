@@ -1,24 +1,17 @@
 window.ccnaDatabase = window.ccnaDatabase || {};
-window.ccnaDatabase.ccna2 = [  
-       {
-            question: "Quale comando permette di creare una VLAN identificata dal numero 10 su uno switch Cisco Catalyst?",
-            options: [
-                "Switch# vlan 10",
-                "Switch(config)# vlan 10",
-                "Switch(config-if)# switchport vlan 10",
-                "Switch(config)# interface vlan 10"
-            ],
-            correct: 1,
-            rationale: "La creazione globale di una VLAN si effettua in modalità di configurazione globale con il comando 'vlan [ID]'. Il comando 'interface vlan' serve invece a creare la SVI di Layer 3."
-        },
-        {
-            question: "Quale modalità di switchport deve essere configurata sulla porta di uno switch collegata direttamente a un router per trasportare il traffico di più VLAN (Inter-VLAN Routing standard)?",
-            options: [
-                "Access",
-                "Trunk",
-                "Dynamic Auto",
-                "Dynamic Desirable"
-            ],
+window.ccnaDatabase.ccna2 = [
+    {
+        question: "Quale comando permette di creare una VLAN identificata dal numero 10 su uno switch Cisco Catalyst?",
+        options: ["Switch# vlan 10", "Switch(config)# vlan 10", "Switch(config-if)# switchport vlan 10", "Switch(config)# interface vlan 10"],
+        correct: 1,
+        rationale: "La creazione globale di una VLAN si effettua in modalità di configurazione globale con il comando 'vlan [ID]'."
+    },
+    {
+        question: "Quale modalità di switchport deve essere configurata per trasportare il traffico di più VLAN?",
+        options: ["Access", "Trunk", "Dynamic Auto", "Dynamic Desirable"],
+        correct: 1,
+        rationale: "Le porte Trunk (standard 802.1Q) permettono il transito di più VLAN."
+    }
             correct: 1,
             rationale: "Le porte Trunk (standard IEEE 802.1Q) permettono di far transitare i frame di più VLAN differenti sullo stesso collegamento fisico applicando un tag all'header."
         },
