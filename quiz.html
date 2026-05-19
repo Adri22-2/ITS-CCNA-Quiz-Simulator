@@ -3,168 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulazione Esame CCNA</title>
+    <title>Simulatore CCNA</title>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --primary: #38bdf8;
-            --success: #22c55e;
-            --danger: #ef4444;
-        }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .quiz-container {
-            max-width: 700px;
-            width: 100%;
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-        .module-title {
-            font-weight: bold;
-            color: var(--primary);
-            text-transform: uppercase;
-        }
-        .progress {
-            background-color: #475569;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-        .question-text {
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .options-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .option-btn {
-            background-color: #1e293b;
-            border: 2px solid #475569;
-            color: var(--text-color);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: left;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .option-btn:hover {
-            border-color: var(--primary);
-            background-color: #334155;
-        }
-        .option-btn.correct {
-            border-color: var(--success);
-            background-color: rgba(34, 197, 94, 0.2);
-        }
-        .option-btn.wrong {
-            border-color: var(--danger);
-            background-color: rgba(239, 68, 68, 0.2);
-        }
-        .rationale-box {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #0f172a;
-            border-left: 4px solid var(--primary);
-            border-radius: 4px;
-            display: none;
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-        .footer-nav {
-            margin-top: 30px;
-            display: flex;
-            justify-content: flex-end;
-        }
-        .next-btn {
-            background-color: var(--primary);
-            color: #0f172a;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            display: none;
-        }
-        .results-container {
-            text-align: center;
-            display: none;
-        }
-        .score {
-            font-size: 48px;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 20px 0;
-        }
-        .home-btn {
-            background-color: #475569;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        #options button { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; }
+        #feedback { font-weight: bold; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="quiz-container">
-        <div id="quiz-box">
-            <div class="header">
-                <span class="module-title" id="mod-title">CCNA</span>
-                <span class="progress" id="progress-text">Domanda 1 di 10</span>
-            </div>
-            <div class="question-text" id="question-container">Caricamento domanda...</div>
-            <div class="options-list" id="options-container">
-                </div>
-            <div class="rationale-box" id="rationale-container">
-                </div>
-            <div class="footer-nav">
-                <button class="next-btn" id="next-button" onclick="nextQuestion()">Prossima Domanda ➡️</button>
-            </div>
-        </div>
-
-        <div id="results-box" class="results-container">
-            <h2>Simulazione Completata!</h2>
-            <p>Il tuo punteggio finale è:</p>
-            <div class="score" id="final-score">0 / 20</div>
-            <p id="feedback-text"></p>
-            <a href="index.html" class="home-btn">⬅️ Torna alla Home</a>
-        </div>
+    <h1 id="mod-title">Caricamento in corso...</h1>
+    
+    <div id="quiz-container">
+        <p id="question">Caricamento domanda...</p>
+        <div id="options"></div>
+        <div id="feedback"></div>
     </div>
 
     <script src="ccna1_data.js"></script>
     <script src="ccna2_data.js"></script>
     <script src="ccna3_data.js"></script>
+    
     <script src="quiz.js"></script>
+    
 </body>
 </html>
