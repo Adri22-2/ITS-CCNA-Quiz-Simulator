@@ -3,13 +3,29 @@ let currentIndex = 0;
 let score = 0;
 let hasAnswered = false;
 
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let hasAnswered = false;
+
 window.onload = function() {
+    // Assicuriamoci che l'oggetto esista, altrimenti crealo vuoto
+    window.ccnaDatabase = window.ccnaDatabase || {};
+    
     const selectedModule = localStorage.getItem("selectedModule");
     
-    if (!selectedModule || !ccnaDatabase[selectedModule]) {
-        alert("Errore nel caricamento del modulo. Ritorno alla home.");
+    // Verifica che il modulo esista dentro l'oggetto
+    if (!selectedModule || !window.ccnaDatabase[selectedModule]) {
+        alert("Errore: Database non caricato correttamente. Riprova dalla home.");
         window.location.href = "index.html";
         return;
+    }
+
+    // Ora usiamo window.ccnaDatabase[selectedModule]
+    document.getElementById("mod-title").innerText = selectedModule.toUpperCase();
+    const allModuleQuestions = window.ccnaDatabase[selectedModule];
+
+    // ... il resto del tuo codice rimane UGUALE a prima ...
     }
 
     // Imposta il titolo del modulo nella pagina
